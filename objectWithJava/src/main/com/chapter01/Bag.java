@@ -14,6 +14,10 @@ public class Bag {
     this.amount = amount;
   }
   
+  public Long getAmount() {
+    return amount;
+  }
+  
   public boolean hasInvitation() {
     return invitation != null;
   }
