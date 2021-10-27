@@ -4,4 +4,8 @@ export class Ticket {
   get fee(): number {
     return this._fee;
   }
+
+  constructor(fee: number) {
+    this._fee = fee;
+  }
 }
