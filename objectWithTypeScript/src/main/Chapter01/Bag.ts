@@ -12,6 +12,10 @@ export class Bag {
     this._invitation = invitation;
   }
 
+  get amount(): number {
+    return this._amount;
+  }
+
   hasInvitation(): boolean {
     return this._invitation != null;
   }
