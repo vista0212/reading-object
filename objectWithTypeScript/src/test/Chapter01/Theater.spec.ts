@@ -39,5 +39,6 @@ describe('Theater 클래스 테스트 코드', () => {
     // then
     expect(audience.bag.amount).toBe(0);
     expect(audience.bag.hasTicket()).toBeTruthy();
+    expect(ticketOffice.amount).toBe(ticketFee)
   });
 });

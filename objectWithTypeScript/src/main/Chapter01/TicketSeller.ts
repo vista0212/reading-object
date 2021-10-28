@@ -9,15 +9,8 @@ export class TicketSeller {
     this._ticketOffice = ticketOffice;
   }
 
-  sellTo(audience: Audience) {
-    if (audience.bag.hasInvitation()) {
-      const ticket: Ticket = this._ticketOffice.ticket;
-      audience.bag.setTicket(ticket);
-    } else {
-      const ticket: Ticket = this._ticketOffice.ticket;
-      audience.bag.minusAmount(ticket.fee);
-      this._ticketOffice.plusAmount(ticket.fee);
-      audience.bag.setTicket(ticket);
-    }
+  sellTo(audience: Audience): void {
+    const ticket: Ticket = this._ticketOffice.ticket;
+    this._ticketOffice.plusAmount(audience.buy(ticket));
   }
 }

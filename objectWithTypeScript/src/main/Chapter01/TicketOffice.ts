@@ -9,6 +9,10 @@ export class TicketOffice {
     this._tickets = tickets;
   }
 
+  get amount(): number {
+    return this._amount
+  }
+
   get ticket(): Ticket {
     return this._tickets.splice(0, 1)[0];
   }
