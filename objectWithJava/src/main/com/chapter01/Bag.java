@@ -37,4 +37,15 @@ public class Bag {
   public void plusAmount(Long amount) {
     this.amount += amount;
   }
+  
+  public Long hold(Ticket ticket) {
+    if (this.hasInvitation()) {
+      this.setTicket(ticket);
+      return 0L;
+    } else {
+      this.minusAmount(ticket.getFee());
+      this.setTicket(ticket);
+      return ticket.getFee();
+    }
+  }
 }
