@@ -35,4 +35,15 @@ export class Bag {
   plusAmount(amount: number): void {
     this._amount += amount;
   }
+
+  hold(ticket: Ticket) {
+    if (this.hasInvitation()) {
+      this.setTicket(ticket);
+      return 0;
+    } else {
+      this.minusAmount(ticket.fee);
+      this.setTicket(ticket);
+      return ticket.fee;
+    }
+  }
 }
